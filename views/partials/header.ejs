@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EveryDay Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/0eaae9cbe1.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="EkartIcon.jpg">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-black pb-4 pt-4">
+        <div class="container-fluid text-white">
+          <a class="navbar-brand" href="/">EveryDay Store <img src="EkartIcon.jpg" height="25px" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="d-flex flex-row w-100 justify-content-center" role="search" action="/search" method="POST">
+                <input class="form-control me-2 w-50 " type="search" placeholder="Search Your Product" aria-label="Search" name="query">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end align-items-end w-100" >
+                <% if(!currentUser) {%> 
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/signup">Log In</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="/signup">Sign Up</a>
+                </li>
+                <% }else{%>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/orders">My Orders</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/logout">Log Out</a>
+                      </li>
+                <%}  %> 
+
+                <li class="nav-item">
+                        <a class="nav-link active" href="/cart"><i class="fa-solid fa-cart-shopping">&nbsp;Cart</i></a>
+                </li>    
+              </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <% if(success && success.length>0) { %>
+        <div class="alert alert-success mt-3"><%= success %></div>
+        <% } %> <% if(error && error.length>0) { %>
+        <div class="alert alert-danger mt-3"><%= error %></div>
+        <% } %>
+      </div>

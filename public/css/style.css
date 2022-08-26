@@ -1,0 +1,77 @@
+/* body {
+  background-color: black;
+} */
+
+.main_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  color: white;
+}
+.main_center a {
+  color: black;
+}
+.main_center .data {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  height: 500px;
+  width: 500px;
+  border: 2px solid white;
+}
+.main_center .data #happen {
+  margin-top: 2rem;
+}
+.main_center .data .buttons {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main_center .data .buttons button {
+  width: 75%;
+  padding: 0.5rem;
+}
+.main_center .data .buttons form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.main_center .data .buttons input {
+  margin: 2px;
+  width: 100px;
+  padding: 5px;
+  margin: 10px;
+  background-color: black;
+  color: white;
+  outline: none;
+  border: 1px solid rgb(75, 75, 236);
+}
+
+#signUp input {
+  margin: 2px;
+  width: 75%;
+  padding: 5px;
+  margin: 10px;
+  background-color: black;
+  color: white;
+  outline: none;
+  border: 1px solid rgb(75, 75, 236);
+}
+#signUp .modal-body {
+  border: 5px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#signUp .modal-body button {
+  width: 100px;
+  margin-top: 5px;
+}/*# sourceMappingURL=style.css.map */
