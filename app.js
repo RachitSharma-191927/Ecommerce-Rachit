@@ -62,7 +62,7 @@ OrderCount.find({}, function (err, orderCountObjects) {
 
 
 app.listen(port, "localhost", () => {
-    console.log("Applistening on 3000 port");
+    console.log("App listening for Requests");
 });
 
   
