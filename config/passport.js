@@ -79,7 +79,7 @@ module.exports = function (passport) {
       {
         clientID: process.env["GOOGLE_CLIENT_ID"],
         clientSecret: process.env["GOOGLE_CLIENT_SECRET"],
-        callbackURL: "/oauth2/redirect/google",
+        callbackURL: " https://ecommerce-rachit.vercel.app/oauth2/redirect/google",
         scope: [],
       },
       function verify(accessToken, refreshToken, profile, cb) {
