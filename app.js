@@ -2,6 +2,7 @@ const express = require("express");
 const bodyparser = require("body-parser");
 const cors = require("cors");
 const db = require("./config/dbconfig");
+const path=require("path")
 const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
@@ -28,10 +29,11 @@ app.use(
 app.use(flash());
 
 app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(cors());
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname,"public")));
 app.use(passport.initialize());
 app.use(passport.authenticate("session"));
 authinitialize(passport);
